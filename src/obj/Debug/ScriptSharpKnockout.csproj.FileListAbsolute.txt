@@ -1,0 +1,8 @@
+C:\Projects\ScriptSharpKnockout\src\bin\Debug\ScriptSharpKnockout.xml
+C:\Projects\ScriptSharpKnockout\src\bin\Debug\ScriptSharpKnockout.dll
+C:\Projects\ScriptSharpKnockout\src\bin\Debug\mscorlib.dll
+C:\Projects\ScriptSharpKnockout\src\bin\Debug\Script.Web.dll
+C:\Projects\ScriptSharpKnockout\src\bin\Debug\mscorlib.xml
+C:\Projects\ScriptSharpKnockout\src\bin\Debug\Script.Web.xml
+C:\Projects\ScriptSharpKnockout\src\obj\Debug\ScriptSharpKnockout.csprojResolveAssemblyReference.cache
+C:\Projects\ScriptSharpKnockout\src\obj\Debug\ScriptSharpKnockout.dll
