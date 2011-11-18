@@ -135,6 +135,15 @@ namespace KnockoutApi {
         }
 
         /// <summary>
+        /// Creates an subscribable value.
+        /// </summary>
+        /// <typeparam name="T">The type of the subscribable.</typeparam>
+        /// <returns>A new subscribable value instance.</returns>
+        public static Subscribable<T> Subscribable<T>() {
+            return null;
+        }
+
+        /// <summary>
         /// Creates an observable value.
         /// </summary>
         /// <typeparam name="T">The type of the observable.</typeparam>
