@@ -18,10 +18,9 @@ namespace KnockoutApi {
     /// <typeparam name="T">The type of the contained value.</typeparam>
     [Imported]
     [IgnoreNamespace]
-    public sealed class Observable<T>: IDisposable {
+    public class Observable<T> : Subscribable<T> {
 
-        private Observable() {
-        }
+        protected Observable() : base() { }
 
         /// <summary>
         /// Gets the current value within the observable object.
@@ -43,18 +42,25 @@ namespace KnockoutApi {
         }
 
         /// <summary>
-        /// Subscribes to change notifications raised when the value changes.
-        /// </summary>
-        /// <param name="changeCallback">The callback to invoke.</param>
-        /// <returns>A subscription cookie that can be disposed to unsubscribe.</returns>
-        public IDisposable Subscribe(Action<T> changeCallback) {
-            return null;
-        }
-
-        /// <summary>
-        /// Invokes the subscriber notification
+        /// Notifies All Subscribers that the Value has Changed
+        /// Called internally with SetValue
         /// </summary>
         public void ValueHasMutated() { }
+
+
+        /// <summary>
+        /// Notifies All Subscribers BEFORE the Value has Changed
+        /// Called internally with SetValue
+        /// </summary>
+        public void ValueWillMutated() { }
+
+        /// <summary>
+        /// For Primitive Types ko will handle Equality internally
+        /// For complex types a supplied function can be assigned to improve 
+        /// change (mutation) detection
+        /// </summary>
+        [IntrinsicProperty]
+        public Func<T, T, bool> EqualityComparer { get; set; }
 
         /// <summary>
         /// For dependent observables, we throttle *evaluations* so that, no matter how fast its dependencies        
@@ -64,10 +70,6 @@ namespace KnockoutApi {
         /// </summary>
         /// <param name="options"></param>
         /// <returns>Extend is Chainable</returns>
-        public Observable<T> Extend(Dictionary options) { return null; }
-
-        public int GetSubscriptionsCount() { return 0; }
-
-        public void Dispose() { }
+        public new Observable<T> Extend(Dictionary options) { return null; }
     }
 }

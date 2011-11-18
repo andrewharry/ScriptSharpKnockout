@@ -20,9 +20,9 @@ namespace KnockoutApi {
     /// <typeparam name="T">The type of the contained values.</typeparam>
     [Imported]
     [IgnoreNamespace]
-    public sealed class ObservableArray<T> {
-
-        private ObservableArray() {
+    public class ObservableArray<T> : Observable<T[]>
+    {
+        protected ObservableArray() : base() {
         }
 
         /// <summary>
@@ -48,10 +48,11 @@ namespace KnockoutApi {
 
         /// <summary>
         /// Gets the underlying items within the observable array.
+        /// This is a Copy of the Values in the Observable
         /// </summary>
         /// <returns>The collection of items.</returns>
         [ScriptName("")]
-        public IReadonlyCollection<T> GetItems() {
+        public T[] GetItems() {
             return null;
         }
 
@@ -77,6 +78,12 @@ namespace KnockoutApi {
         /// </summary>
         /// <param name="value">The value to add.</param>
         public void Push(T value) {
+        }
+
+        /// <summary>
+        /// Replaces the Specified Item with the NewItem
+        /// </summary>
+        public void Replace(T oldItem, T newItem) {
         }
 
         /// <summary>
@@ -120,6 +127,17 @@ namespace KnockoutApi {
             return default(T);
         }
 
+
+        /// <summary>
+        /// Native Javascript Splice Function
+        /// Modifies the Existing Sequence
+        /// </summary>
+        /// <param name="index">Required. An integer that specifies at what position to add/remove elements</param>
+        /// <param name="howmany">Required. The number of elements to be removed. If set to 0, no elements will be removed</param>
+        /// <param name="args">Optional. The new element(s) to be added to the array</param>
+        public void Splice(int index, int howmany, params T[] args) {            
+        }
+
         /// <summary>
         /// Returns elements from start index to the end of the array.
         /// </summary>
@@ -143,15 +161,6 @@ namespace KnockoutApi {
         /// Performs a default alphanumeric sort on the elements of the array.
         /// </summary>
         public void Sort() {
-        }
-
-        /// <summary>
-        /// Subscribes to change notifications raised when the value changes.
-        /// </summary>
-        /// <param name="changeCallback">The callback to invoke.</param>
-        /// <returns>A subscription cookie that can be disposed to unsubscribe.</returns>
-        public IDisposable Subscribe(Action<T> changeCallback) {
-            return null;
         }
 
         /// <summary>

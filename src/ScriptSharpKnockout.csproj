@@ -51,6 +51,7 @@
     <Compile Include="Observable.cs" />
     <Compile Include="ObservableArray.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Subscribable.cs" />
     <ScriptInfo Include="Properties\ScriptInfo.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
