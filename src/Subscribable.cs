@@ -1,4 +1,7 @@
-// Subscribable.cs
+// BindingHandler.cs
+// Script#/Libraries/Knockout
+// This source code is subject to terms and conditions of the Microsoft 
+// Public License. A copy of the license can be found in License.txt.
 //
 
 using System;
@@ -7,9 +10,13 @@ using System.Runtime.CompilerServices;
 
 namespace KnockoutApi
 {
+    /// <summary>
+    /// Represents an object containing an subscribable value.
+    /// </summary>
+    /// <typeparam name="T">The type of the contained value.</typeparam>
     [Imported]
     [IgnoreNamespace]
-    public class Subscribable<T>: IDisposable
+    public class Subscribable<T> : IDisposable
     {
         protected Subscribable() { }
 
@@ -37,12 +44,24 @@ namespace KnockoutApi
         /// <returns>A subscription cookie that can be disposed to unsubscribe.</returns>
         public IDisposable Subscribe(Action<T> changeCallback, object callBackTarget, string eventName) { return null; }
 
+        /// <summary>
+        /// Sets the Value and Notifies all of the Subscribers
+        /// </summary>
+        /// <param name="value">The Value to be Set</param>
         public void NotifySubscribers(T value) { }
 
+        /// <summary>
+        /// Sets the Value and Notifies all of the Subscribers for the Specified Event
+        /// </summary>
+        /// <param name="value">The Value to be Set</param>
+        /// <param name="eventName">[Optional] Event Name</param>
         public void NotifySubscribers(T value, string eventName) { }
-        
-        public int GetSubscriptionsCount() { return 0; }
 
+        /// <summary>
+        /// Get Subscription Count
+        /// </summary>
+        /// <returns>Returns the Number of Subscribers</returns>
+        public int GetSubscriptionsCount() { return 0; }
 
         /// <summary>
         /// For dependent observables, we throttle *evaluations* so that, no matter how fast its dependencies        
@@ -54,6 +73,9 @@ namespace KnockoutApi
         /// <returns>Extend is Chainable</returns>
         public Subscribable<T> Extend(Dictionary options) { return null; }
 
+        /// <summary>
+        /// Disposes this Subscribable
+        /// </summary>
         public void Dispose() { }
     }
 }

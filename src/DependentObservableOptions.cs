@@ -38,19 +38,25 @@ namespace KnockoutApi {
             set;
         }
 
-        //
-        // Summary:
-        //  Gets or sets the function to compute the value.
+        /// <summary>
+        /// Gets or sets the function to write the value.
+        /// </summary>
         [ScriptName("write")]
         [IntrinsicProperty]
-        public Action<T> SetValueFunction { get; set; }
+        public Action<T> SetValueFunction { 
+            get; 
+            set; 
+        }
 
-        //
-        // Summary:
-        //  Gets or sets the function to compute the value.
+        /// <summary>
+        /// Gets or sets the function to write the value.
+        /// </summary>
         [ScriptName("write")]
         [IntrinsicProperty]
-        public Action<T[]> SetArrayValueFunction { get; set; }
+        public Action<T[]> SetArrayValueFunction { 
+            get; 
+            set; 
+        }
 
         /// <summary>
         /// Gets the model instance which acts as 'this' in the get value function.
@@ -80,6 +86,5 @@ namespace KnockoutApi {
             get;
             set;
         }
-
     }
 }

@@ -42,7 +42,9 @@
     <Reference Include="Script.Web" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BindingContext.cs" />
     <Compile Include="BindingHandler.cs" />
+    <Compile Include="CompareResult.cs" />
     <Compile Include="DependentObservable.cs" />
     <Compile Include="DependentObservableOptions.cs" />
     <Compile Include="Knockout.cs" />

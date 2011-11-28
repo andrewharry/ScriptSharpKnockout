@@ -20,8 +20,8 @@ namespace KnockoutApi {
     /// <typeparam name="T">The type of the contained values.</typeparam>
     [Imported]
     [IgnoreNamespace]
-    public class ObservableArray<T> : Observable<T[]>
-    {
+    public sealed class ObservableArray<T> : Observable<T[]> {
+
         protected ObservableArray() : base() {
         }
 
@@ -54,6 +54,13 @@ namespace KnockoutApi {
         [ScriptName("")]
         public T[] GetItems() {
             return null;
+        }
+
+        /// <summary>
+        /// Sets the underlying items within the observable array.
+        /// </summary>
+        [ScriptName("")]
+        public void SetItems(T[] values) {
         }
 
         /// <summary>
@@ -127,7 +134,6 @@ namespace KnockoutApi {
             return default(T);
         }
 
-
         /// <summary>
         /// Native Javascript Splice Function
         /// Modifies the Existing Sequence
@@ -135,7 +141,7 @@ namespace KnockoutApi {
         /// <param name="index">Required. An integer that specifies at what position to add/remove elements</param>
         /// <param name="howmany">Required. The number of elements to be removed. If set to 0, no elements will be removed</param>
         /// <param name="args">Optional. The new element(s) to be added to the array</param>
-        public void Splice(int index, int howmany, params T[] args) {            
+        public void Splice(int index, int howmany, params T[] args) {
         }
 
         /// <summary>
@@ -174,6 +180,19 @@ namespace KnockoutApi {
         /// Inserts the value at the beginning of the array.
         /// </summary>
         /// <param name="value">The value to insert.</param>
-        public void Unshift(T value) { }
+        public void Unshift(T value) {
+        }
+
+        /// <summary>
+        /// For dependent observables, we throttle *evaluations* so that, no matter how fast its dependencies        
+        /// notify updates, the target doesn't re-evaluate (and hence doesn't notify) faster than a certain rate
+        /// For writable targets (observables, or writable dependent observables), we throttle *writes*        
+        /// so the target cannot change value synchronously or faster than a certain rate
+        /// </summary>
+        /// <param name="options"></param>
+        /// <returns>Extend is Chainable</returns>
+        public new ObservableArray<T> Extend(Dictionary options) {
+            return null;
+        }
     }
 }

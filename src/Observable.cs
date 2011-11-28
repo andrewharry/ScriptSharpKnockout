@@ -20,7 +20,8 @@ namespace KnockoutApi {
     [IgnoreNamespace]
     public class Observable<T> : Subscribable<T> {
 
-        protected Observable() : base() { }
+        protected Observable() : base() {
+        }
 
         /// <summary>
         /// Gets the current value within the observable object.
@@ -35,24 +36,23 @@ namespace KnockoutApi {
         /// Sets the value within the observable object.
         /// </summary>
         /// <param name="value">The new value.</param>
-        /// <returns>Specification Supports chaining</returns>
         [ScriptName("")]
-        public Observable<T> SetValue(T value) {
-            return null;
+        public void SetValue(T value) {
         }
 
         /// <summary>
         /// Notifies All Subscribers that the Value has Changed
         /// Called internally with SetValue
         /// </summary>
-        public void ValueHasMutated() { }
-
+        public void ValueHasMutated() {
+        }
 
         /// <summary>
         /// Notifies All Subscribers BEFORE the Value has Changed
         /// Called internally with SetValue
         /// </summary>
-        public void ValueWillMutated() { }
+        public void ValueWillMutated() {
+        }
 
         /// <summary>
         /// For Primitive Types ko will handle Equality internally
@@ -60,7 +60,10 @@ namespace KnockoutApi {
         /// change (mutation) detection
         /// </summary>
         [IntrinsicProperty]
-        public Func<T, T, bool> EqualityComparer { get; set; }
+        public Func<T, T, bool> EqualityComparer {
+            get;
+            set;
+        }
 
         /// <summary>
         /// For dependent observables, we throttle *evaluations* so that, no matter how fast its dependencies        
@@ -69,7 +72,9 @@ namespace KnockoutApi {
         /// so the target cannot change value synchronously or faster than a certain rate
         /// </summary>
         /// <param name="options"></param>
-        /// <returns>Extend is Chainable</returns>
-        public new Observable<T> Extend(Dictionary options) { return null; }
+        /// <returns>Returns 'this' inorder to support chaining methods</returns>
+        public new Observable<T> Extend(Dictionary options) {
+            return null;
+        }
     }
 }

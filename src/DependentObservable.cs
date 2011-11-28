@@ -18,7 +18,7 @@ namespace KnockoutApi {
     /// <typeparam name="T">The type of the contained value.</typeparam>
     [Imported]
     [IgnoreNamespace]
-    public sealed class DependentObservable<T> : IDisposable {
+    public sealed class DependentObservable<T> {
 
         private DependentObservable() {
         }
@@ -33,12 +33,35 @@ namespace KnockoutApi {
         }
 
         /// <summary>
+        /// Get Dependencies Count
+        /// </summary>
+        /// <returns>Returns the Number of Dependencies</returns>
+        public int GetDependenciesCount() { 
+            return 0; 
+        }
+
+        /// <summary>
         /// Subscribes to change notifications raised when the value changes.
         /// </summary>
         /// <param name="changeCallback">The callback to invoke.</param>
         /// <returns>A subscription cookie that can be disposed to unsubscribe.</returns>
         public IDisposable Subscribe(Action<T> changeCallback) {
             return null;
+        }
+
+        /// <summary>
+        /// Sets the Value and Notifies all of the Subscribers
+        /// </summary>
+        /// <param name="value">The Value to be Set</param>
+        public void NotifySubscribers(T value) { 
+        }
+
+        /// <summary>
+        /// Sets the Value and Notifies all of the Subscribers for the Specified Event
+        /// </summary>
+        /// <param name="value">The Value to be Set</param>
+        /// <param name="eventName">[Optional] Event Name</param>
+        public void NotifySubscribers(T value, string eventName) { 
         }
 
         /// <summary>
@@ -49,10 +72,14 @@ namespace KnockoutApi {
         /// </summary>
         /// <param name="options"></param>
         /// <returns>Extend is Chainable</returns>
-        public DependentObservable<T> Extend(Dictionary options) { return null; }
+        public DependentObservable<T> Extend(Dictionary options) { 
+            return null; 
+        }
 
-        public int GetDependenciesCount() { return 0; }
-
-        public void Dispose() { }
+        /// <summary>
+        /// Disposes this Subscribable
+        /// </summary>
+        public void Dispose() { 
+        }
     }
 }
