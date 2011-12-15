@@ -183,6 +183,13 @@ namespace KnockoutApi {
         public void Unshift(T value) {
         }
 
+        [IntrinsicProperty]
+        public new Func<T, T, bool> EqualityComparer
+        {
+            get;
+            set;
+        }
+
         /// <summary>
         /// For dependent observables, we throttle *evaluations* so that, no matter how fast its dependencies        
         /// notify updates, the target doesn't re-evaluate (and hence doesn't notify) faster than a certain rate
