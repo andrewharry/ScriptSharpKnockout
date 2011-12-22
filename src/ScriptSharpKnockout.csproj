@@ -45,8 +45,10 @@
     <Compile Include="BindingContext.cs" />
     <Compile Include="BindingHandler.cs" />
     <Compile Include="CompareResult.cs" />
-    <Compile Include="DependentObservable.cs" />
+    <Compile Include="Computed.cs" />
+    <Compile Include="ComputedOptions.cs" />
     <Compile Include="DependentObservableOptions.cs" />
+    <Compile Include="DependentObservable.cs" />
     <Compile Include="Knockout.cs" />
     <Compile Include="KnockoutMapping.cs" />
     <Compile Include="KnockoutUtils.cs" />

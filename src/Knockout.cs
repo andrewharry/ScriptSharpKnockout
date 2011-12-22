@@ -121,6 +121,25 @@ namespace KnockoutApi {
         /// <typeparam name="T">The type of the observable value.</typeparam>
         /// <param name="function">A function to compute the value.</param>
         /// <returns>A new dependent observable instance.</returns>
+        public static Computed<T> Computed<T>(Func<T> function) {
+            return null;
+        }
+
+        /// <summary>
+        /// Creates an observable with a value computed from one or more other values.
+        /// </summary>
+        /// <typeparam name="T">The type of the observable value.</typeparam>
+        /// <param name="options">Options for the dependent observable.</param>
+        public static Computed<T> Computed<T>(ComputedOptions<T> options) {
+            return null;
+        }
+
+        /// <summary>
+        /// Creates an observable with a value computed from one or more other values.
+        /// </summary>
+        /// <typeparam name="T">The type of the observable value.</typeparam>
+        /// <param name="function">A function to compute the value.</param>
+        /// <returns>A new dependent observable instance.</returns>
         public static DependentObservable<T> DependentObservable<T>(Func<T> function) {
             return null;
         }

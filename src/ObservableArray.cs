@@ -22,7 +22,7 @@ namespace KnockoutApi {
     [IgnoreNamespace]
     public sealed class ObservableArray<T> : Observable<T[]> {
 
-        protected ObservableArray() : base() {
+        private ObservableArray() : base() {
         }
 
         /// <summary>
