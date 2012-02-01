@@ -18,7 +18,7 @@ namespace KnockoutApi
     [IgnoreNamespace]
     public class Subscribable<T> : IDisposable
     {
-        protected Subscribable() { }
+        public Subscribable() { }
 
         /// <summary>
         /// Subscribes to change notifications raised when the value changes.

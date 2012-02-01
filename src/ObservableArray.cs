@@ -22,7 +22,7 @@ namespace KnockoutApi {
     [IgnoreNamespace]
     public sealed class ObservableArray<T> : Observable<T[]> {
 
-        protected ObservableArray() : base() {
+        private ObservableArray() : base() {
         }
 
         /// <summary>
@@ -181,6 +181,13 @@ namespace KnockoutApi {
         /// </summary>
         /// <param name="value">The value to insert.</param>
         public void Unshift(T value) {
+        }
+
+        [IntrinsicProperty]
+        public new Func<T, T, bool> EqualityComparer
+        {
+            get;
+            set;
         }
 
         /// <summary>
