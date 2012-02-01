@@ -16,6 +16,7 @@ namespace KnockoutApi
     /// <typeparam name="T">The type of the contained value.</typeparam>
     [Imported]
     [IgnoreNamespace]
+    [ScriptName("ko.subscribable")]
     public class Subscribable<T> : IDisposable
     {
         public Subscribable() { }
