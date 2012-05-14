@@ -62,4 +62,9 @@
   <Target Name="AfterBuild">
     <Copy SourceFiles="@(ScriptInfo)" DestinationFiles="$(OutputPath)$(AssemblyName).txt" />
   </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties BuildVersion_UseGlobalSettings="False" BuildVersion_ConfigurationName="Any" BuildVersion_BuildVersioningStyle="None.None.None.None" />
+    </VisualStudio>
+  </ProjectExtensions>
 </Project>
