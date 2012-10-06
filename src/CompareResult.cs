@@ -12,7 +12,7 @@ namespace KnockoutApi
     public class CompareResult<T>
     {
         [IntrinsicProperty]
-        public string Status {
+        public CompareStatus Status {
             get;
             set;
         }

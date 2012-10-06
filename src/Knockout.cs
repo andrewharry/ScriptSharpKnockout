@@ -20,7 +20,7 @@ namespace KnockoutApi {
     [Imported]
     [IgnoreNamespace]
     [ScriptName("ko")]
-    public static class Knockout {
+    public class Knockout {
 
         /// <summary>
         /// Provides access to the currently registered binding handlers.

@@ -47,6 +47,7 @@
     <Compile Include="CompareResult.cs" />
     <Compile Include="Computed.cs" />
     <Compile Include="ComputedOptions.cs" />
+    <Compile Include="CompareStatus.cs" />
     <Compile Include="DependentObservableOptions.cs" />
     <Compile Include="DependentObservable.cs" />
     <Compile Include="Knockout.cs" />
@@ -64,7 +65,7 @@
   </Target>
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties BuildVersion_UseGlobalSettings="False" BuildVersion_ConfigurationName="Any" BuildVersion_BuildVersioningStyle="None.None.None.None" />
+      <UserProperties BuildVersion_BuildVersioningStyle="None.None.None.None" BuildVersion_ConfigurationName="Any" BuildVersion_UseGlobalSettings="False" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>
